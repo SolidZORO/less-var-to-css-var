@@ -1,4 +1,4 @@
-# watch-file-change-and-run-callback-webpack-plugin
+# less-var-to-css-var
 
 <!--
 [![Build Status][build-img]][build-url]
@@ -13,26 +13,14 @@
 ## Installation
 
 ```sh
-yarn add watch-file-change-and-run-callback-webpack-plugin
+yarn add less-var-to-css-var
 ```
 
 
-## Usage
+[//]: # (## Usage)
 
-```js
-new WatchFileAndRunCallbackWebpackPlugin({
-  matchs: [
-    {
-      filePath: `${SRC_DIR}/styles/1.less`,
-      callback: () => console.log('1'),
-    },
-    {
-      filePath: `${SRC_DIR}/styles/2.less`,
-      callback: () => console.log('2'),
-    },
-  ],
-})
-```
+[//]: # (```js)
+[//]: # (```)
 
 
 ## License
@@ -45,10 +33,10 @@ new WatchFileAndRunCallbackWebpackPlugin({
 
 [mit-url]: ./LICENSE
 
-[npm-img]: https://img.shields.io/npm/v/watch-file-change-and-run-callback-webpack-plugin.svg
+[npm-img]: https://img.shields.io/npm/v/less-var-to-css-var.svg
 
-[npm-url]: https://www.npmjs.com/package/watch-file-change-and-run-callback-webpack-plugin
+[npm-url]: https://www.npmjs.com/package/less-var-to-css-var
 
-[build-img]: https://github.com/SolidZORO/watch-file-change-and-run-callback-webpack-plugin/workflows/badge.svg
+[build-img]: https://github.com/SolidZORO/less-var-to-css-var/workflows/badge.svg
 
-[build-url]: https://github.com/SolidZORO/watch-file-change-and-run-callback-webpack-plugin/actions
+[build-url]: https://github.com/SolidZORO/less-var-to-css-var/actions

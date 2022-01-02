@@ -1,0 +1,48 @@
+{
+  "name": "less-var-to-css-var",
+  "version": "0.0.1",
+  "main": "index.js",
+  "sideEffect": false,
+  "author": "Jason Feng <solidzoro@live.com>",
+  "description": "Watch File Change And Run Callback Webpack Plugin",
+  "license": "MIT",
+  "homepage": "https://github.com/SolidZORO/less-var-to-css-var",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SolidZORO/less-var-to-css-var.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SolidZORO/less-var-to-css-var/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "-------------------------------- TOOL ----": "----",
+    "versionup": "standard-version -r patch",
+    "versionup:minor": "standard-version -r minor",
+    "versionup:major": "standard-version -r major",
+    "versionup:init": "standard-version --first-release",
+    "-------------------------------- PROD ----": "----",
+    "release-beta": "npm publish --dist-tag --tag beta",
+    "release": "npm publish --dist-tag"
+  },
+  "keywords": [
+    "less",
+    "vars",
+    "var",
+    "css",
+    "convert",
+    "webpack",
+    "plugin",
+    "webpack-plugin"
+  ],
+  "devDependencies": {},
+  "dependencies": {}
+}
