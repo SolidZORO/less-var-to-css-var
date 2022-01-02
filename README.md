@@ -1,10 +1,10 @@
 # less-var-to-css-var
 
-<!--
-[![Build Status][build-img]][build-url]
--->
-[![NPM version][npm-img]][npm-url]
-[![License: MIT][mit-img]][mit-url]
+[![version][npm-img]][npm-url]
+[![license][mit-img]][mit-url]
+[![size][size-img]][size-url]
+
+[//]: # ([![download][download-img]][download-url])
 
 Convert Less Var To CSS Var
 
@@ -70,13 +70,25 @@ Output
 
 <!-- badges -->
 
-[mit-img]: https://img.shields.io/badge/License-MIT-blue.svg
+[mit-img]: https://img.shields.io/npm/l/less-var-to-css-var.svg?style=flat&colorA=000000&colorB=000000
 
 [mit-url]: ./LICENSE
 
-[npm-img]: https://img.shields.io/npm/v/less-var-to-css-var.svg
+
+[npm-img]: https://img.shields.io/npm/v/less-var-to-css-var?style=flat&colorA=000000&colorB=000000
 
 [npm-url]: https://www.npmjs.com/package/less-var-to-css-var
+
+
+[size-img]: https://img.shields.io/bundlephobia/minzip/less-var-to-css-var?label=bundle&style=flat&colorA=000000&colorB=000000
+
+[size-url]: https://www.npmjs.com/package/less-var-to-css-var
+
+
+[download-img]: https://img.shields.io/npm/dt/less-var-to-css-var.svg?style=flat&colorA=000000&colorB=000000
+
+[download-url]: https://www.npmjs.com/package/less-var-to-css-var
+
 
 [build-img]: https://github.com/SolidZORO/less-var-to-css-var/workflows/badge.svg
 
