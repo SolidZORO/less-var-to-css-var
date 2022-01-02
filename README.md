@@ -28,7 +28,7 @@ less-var-to-css-var -i '~/Sites/nkk/nkk-admin/src/styles/variables.less' -o '~/S
 
 
 ```js
-const lessVarToCssVar = require('./index');
+const lessVarToCssVar = require('less-var-to-css-var');
 
 lessVarToCssVar({
   inputPath: '~/Sites/nkk/nkk-admin/src/styles/variables.less',
