@@ -6,8 +6,6 @@
 [![NPM version][npm-img]][npm-url]
 [![License: MIT][mit-img]][mit-url]
 
-🚧 WIP（持续优化中……）
-
 
 ## Installation
 
@@ -18,11 +16,31 @@ yarn add less-var-to-css-var
 
 ## Usage
 
+
+### for Node Cil
+
 ```bash
 less-var-to-css-var -i '~/Sites/nkk/nkk-admin/src/styles/variables.less' -o '~/Sites/nkk/nkk-admin/src/styles/variables-css2.less' -t ':root' -h "@import '/src/styles/variables.less';"
 ```
 
-Input .less
+### for Js
+
+
+```js
+const lessVarToCssVar = require('./index');
+
+lessVarToCssVar({
+  inputPath: '~/Sites/nkk/nkk-admin/src/styles/variables.less',
+  outputPath: '~/Sites/nkk/nkk-admin/src/styles/variables-css.less',
+  scopeTag: ':root',
+  header: "@import '/src/styles/variables.less';",
+});
+
+```
+
+## Result
+
+Input
 
 ```less
 // variables.less (input)
@@ -32,7 +50,7 @@ Input .less
 @font-size-base: 14px;
 ```
 
-Output .less
+Output
 
 ```less
 // variables-css.less (output)
