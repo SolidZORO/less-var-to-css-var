@@ -4,7 +4,7 @@
   "main": "index.js",
   "sideEffect": false,
   "author": "Jason Feng <solidzoro@live.com>",
-  "description": "Watch File Change And Run Callback Webpack Plugin",
+  "description": "Convert Less Var To CSS Var",
   "license": "MIT",
   "homepage": "https://github.com/SolidZORO/less-var-to-css-var",
   "bin": {
