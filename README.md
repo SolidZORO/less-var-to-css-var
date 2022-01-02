@@ -3,8 +3,7 @@
 [![version][npm-img]][npm-url]
 [![license][mit-img]][mit-url]
 [![size][size-img]][size-url]
-
-[//]: # ([![download][download-img]][download-url])
+[![download][download-img]][download-url]
 
 Convert Less Var To CSS Var
 
