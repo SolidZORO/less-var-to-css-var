@@ -7,7 +7,6 @@
 [![License: MIT][mit-img]][mit-url]
 
 🚧 WIP（持续优化中……）
- 
 
 
 ## Installation
@@ -17,10 +16,33 @@ yarn add less-var-to-css-var
 ```
 
 
-[//]: # (## Usage)
+## Usage
 
-[//]: # (```js)
-[//]: # (```)
+```bash
+less-var-to-css-var -i '~/Sites/nkk/nkk-admin/src/styles/variables.less' -o '~/Sites/nkk/nkk-admin/src/styles/variables-css2.less' -t ':root' -h "@import '/src/styles/variables.less';"
+```
+
+Input .less
+
+```less
+// variables.less (input)
+@import '~antd/lib/style/themes/default.less';
+
+@THEME--DARK: ~'theme-dark';
+@font-size-base: 14px;
+```
+
+Output .less
+
+```less
+// variables-css.less (output)
+@import '/src/styles/variables.less';
+
+:root {
+  --THEME--DARK: @THEME--DARK;
+  --font-size-base: @font-size-base;
+}
+```
 
 
 ## License

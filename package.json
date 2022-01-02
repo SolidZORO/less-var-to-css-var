@@ -7,6 +7,9 @@
   "description": "Watch File Change And Run Callback Webpack Plugin",
   "license": "MIT",
   "homepage": "https://github.com/SolidZORO/less-var-to-css-var",
+  "bin": {
+    "less-var-to-css-var": "./index.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/SolidZORO/less-var-to-css-var.git"
