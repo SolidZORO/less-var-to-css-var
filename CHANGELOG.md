@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/SolidZORO/less-var-to-css-var/compare/v1.0.2...v1.0.3) (2022-01-02)
+
+
+### Features
+
+* add badges ([8f39223](https://github.com/SolidZORO/less-var-to-css-var/commit/8f39223db13eb1078efa33f4e3b07765ef8b05a0))
+
 ### [1.0.2](https://github.com/SolidZORO/less-var-to-css-var/compare/v1.0.1...v1.0.2) (2022-01-02)
 
 
