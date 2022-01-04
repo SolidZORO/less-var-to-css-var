@@ -11,14 +11,14 @@ const lessVarToCssVar = (opts) => {
 
   // 没有传参进来，认为是 node cil 执行，读取 argv
   if (opts) {
-    console.log('\n🟡 Running on JS\n');
+    console.log('\n🌀 less-var-to-css-var (Running on JS)\n');
 
     if (opts.inputPath) inputPath = opts.inputPath;
     if (opts.outputPath) outputPath = opts.outputPath;
     if (opts.scopeTag) scopeTag = opts.scopeTag;
     if (opts.header) header = opts.header;
   } else {
-    console.log('\n🟢 Running on CIL\n');
+    console.log('\n🌀 less-var-to-css-var (Running on CIL)\n');
 
     process.argv.forEach((v, i, arr) => {
       if (i < 2) return;
