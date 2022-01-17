@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/SolidZORO/less-var-to-css-var/compare/v1.0.5...v1.1.0) (2022-01-17)
+
+
+### Features
+
+* detect isExecOnCLI ([1cb21f5](https://github.com/SolidZORO/less-var-to-css-var/commit/1cb21f573102e563e820d6f4d2a4c33ce3809473))
+
 ### [1.0.5](https://github.com/SolidZORO/less-var-to-css-var/compare/v1.0.4...v1.0.5) (2022-01-04)
 
 
