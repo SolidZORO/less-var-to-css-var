@@ -3,7 +3,7 @@ const fs = require('fs');
 const isExecOnCLI = require.main === module;
 
 // usage
-// node index.js -i '~/Sites/nkk/nkk-admin/src/styles/variables.less' -o '~/Sites/nkk/nkk-admin/src/styles/variables-css2.less' -t ':root' -h "@import '/src/styles/variables.less';"
+// node index.js -i '~/styles/variables.less' -o '~/styles/variables-css2.less' -t ':root' -h "@import '/src/styles/variables.less';"
 
 const lessVarToCssVar = (opts) => {
   let inputPath = undefined;

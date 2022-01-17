@@ -8,7 +8,7 @@
   "license": "MIT",
   "homepage": "https://github.com/SolidZORO/less-var-to-css-var",
   "bin": {
-    "less-var-to-css-var": "./index.js"
+    "less-var-to-css-var": "./src/index.js"
   },
   "repository": {
     "type": "git",

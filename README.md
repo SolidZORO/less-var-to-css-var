@@ -20,7 +20,7 @@ yarn add less-var-to-css-var
 ### for Node Cil
 
 ```bash
-less-var-to-css-var -i '~/Sites/nkk/nkk-admin/src/styles/variables.less' -o '~/Sites/nkk/nkk-admin/src/styles/variables-css2.less' -t ':root' -h "@import '/src/styles/variables.less';"
+less-var-to-css-var -i '~/styles/variables.less' -o '~/styles/variables-css2.less' -t ':root' -h "@import '/src/styles/variables.less';"
 ```
 
 ### for Js
@@ -30,8 +30,8 @@ less-var-to-css-var -i '~/Sites/nkk/nkk-admin/src/styles/variables.less' -o '~/S
 const lessVarToCssVar = require('less-var-to-css-var');
 
 lessVarToCssVar({
-  inputPath: '~/Sites/nkk/nkk-admin/src/styles/variables.less',
-  outputPath: '~/Sites/nkk/nkk-admin/src/styles/variables-css.less',
+  inputPath: '~/styles/variables.less',
+  outputPath: '~/styles/variables-css.less',
   scopeTag: ':root',
   header: "@import '/src/styles/variables.less';",
 });
