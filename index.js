@@ -1,5 +1,7 @@
 const fs = require('fs');
 
+const isExecOnCLI = require.main === module;
+
 // usage
 // node index.js -i '~/Sites/nkk/nkk-admin/src/styles/variables.less' -o '~/Sites/nkk/nkk-admin/src/styles/variables-css2.less' -t ':root' -h "@import '/src/styles/variables.less';"
 
@@ -10,14 +12,17 @@ const lessVarToCssVar = (opts) => {
   let header = '';
 
   // 没有传参进来，认为是 node cil 执行，读取 argv
-  if (opts) {
+  if (!isExecOnCLI && opts) {
     console.log('\n⚡️ less-var-to-css-var via JS\n');
 
     if (opts.inputPath) inputPath = opts.inputPath;
     if (opts.outputPath) outputPath = opts.outputPath;
+
     if (opts.scopeTag) scopeTag = opts.scopeTag;
     if (opts.header) header = opts.header;
-  } else {
+  }
+
+  if (isExecOnCLI) {
     console.log('\n⚡️ less-var-to-css-var via CIL\n');
 
     process.argv.forEach((v, i, arr) => {
@@ -69,12 +74,12 @@ ${scopeTag} {
 
   fs.writeFileSync(outputPath, `${HEADER}${CONTENT}${FOOTER}`);
 
-  console.log('   -', opts.outputPath, '\n');
+  console.log('   -', outputPath, '\n');
 };
 
 //
 //
 //
 //
-
+if (isExecOnCLI) lessVarToCssVar(); // for CIL
 module.exports = lessVarToCssVar;
