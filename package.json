@@ -1,6 +1,6 @@
 {
   "name": "less-var-to-css-var",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "src/index.js",
   "sideEffect": false,
   "author": "Jason Feng <solidzoro@live.com>",
