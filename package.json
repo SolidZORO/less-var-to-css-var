@@ -1,7 +1,7 @@
 {
   "name": "less-var-to-css-var",
   "version": "1.2.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "sideEffect": false,
   "author": "Jason Feng <solidzoro@live.com>",
   "description": "Convert Less Var To CSS Var",
