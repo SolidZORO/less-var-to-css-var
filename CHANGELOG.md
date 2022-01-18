@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/SolidZORO/less-var-to-css-var/compare/v1.2.1...v1.2.2) (2022-01-18)
+
+
+### Features
+
+* add !/usr/bin/env node ([c61b390](https://github.com/SolidZORO/less-var-to-css-var/commit/c61b3908765b51139963a1d9c3c4a0be85ec011d))
+
 ### [1.2.1](https://github.com/SolidZORO/less-var-to-css-var/compare/v1.2.0...v1.2.1) (2022-01-17)
 
 
