@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.2](https://github.com/SolidZORO/less-var-to-css-var/compare/v1.3.1...v1.3.2) (2022-04-01)
+
+
+### Features
+
+* add CODE GEN STRING COMMENT ([5468fa2](https://github.com/SolidZORO/less-var-to-css-var/commit/5468fa2d4a982b5629fcbeb8a851cc4e785d0f3d))
+
 ### [1.3.1](https://github.com/SolidZORO/less-var-to-css-var/compare/v1.3.0...v1.3.1) (2022-04-01)
 
 
