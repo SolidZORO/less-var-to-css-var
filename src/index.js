@@ -113,7 +113,7 @@ const lessVarToCssVar = (opts) => {
   //
   // output JS
   if (jsOutputPath) {
-    let JS_HEADER = `${__CODE_GEN_STR__}\n${__ESLINT_STR__}\n\nexport const ${jsVar} = {\n`;
+    let JS_HEADER = `${__CODE_GEN_STR__}\n${__ESLINT_STR__}\nexport const ${jsVar} = {\n`;
 
     if (header) {
       JS_HEADER = `${__CODE_GEN_STR__}\n${__ESLINT_STR__}\n${jsheader}\n\nexport const ${jsVar} = {\n`;
