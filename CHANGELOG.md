@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/SolidZORO/less-var-to-css-var/compare/v1.3.4...v1.4.0) (2022-04-01)
+
+
+### Features
+
+* add option `jsValueObjectKv` ([17069e2](https://github.com/SolidZORO/less-var-to-css-var/commit/17069e2597b8c421be02fb03e171f302b1b9f366))
+
+
+### Chore
+
+* update deps ([3814f1b](https://github.com/SolidZORO/less-var-to-css-var/commit/3814f1ba9a470cd3682f008d394a8cd70d8a8bff))
+
 ### [1.3.4](https://github.com/SolidZORO/less-var-to-css-var/compare/v1.3.3...v1.3.4) (2022-04-01)
 
 
