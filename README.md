@@ -69,6 +69,8 @@ Output
   --THEME--DARK: @THEME--DARK;
   --font-size-base: @font-size-base;
 }
+
+// BTW: more details can be found in the `/__test__` folder.
 ```
 
 
