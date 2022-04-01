@@ -32,6 +32,8 @@
     "versionup:minor": "standard-version -r minor",
     "versionup:major": "standard-version -r major",
     "versionup:init": "standard-version --first-release",
+    "-------------------------------- TEST ----": "----",
+    "test": "node ./__test__/out.js",
     "-------------------------------- PROD ----": "----",
     "release-beta": "npm publish --dist-tag --tag beta",
     "release": "npm publish --dist-tag"

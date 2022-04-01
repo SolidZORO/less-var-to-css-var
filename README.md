@@ -1,11 +1,11 @@
 # less-var-to-css-var
 
+Convert Less Var To CSS Var
+
 [![version][npm-img]][npm-url]
 [![license][mit-img]][mit-url]
 [![size][size-img]][size-url]
 [![download][download-img]][download-url]
-
-Convert Less Var To CSS Var
 
 ## Installation
 
@@ -34,6 +34,15 @@ lessVarToCssVar({
   outputPath: '~/styles/variables-css.less',
   scopeTag: ':root',
   header: "@import '/src/styles/variables.less';",
+  //
+  // supported since v1.3.0
+  jsOutputPath: `${CUR_DIR}/variables.js`,
+  jsVar: 'PAGE_COLOR',
+  jsheader: "import React, { useEffect } from 'react';",
+  //
+  // supported since v1.3.0
+  useRealValue: true, // Use real CSS values instead of the --a: @a; mapping
+  useRealValueFilterLessVar: '____IS_A_LESS_VAR____', // Replace the string of the less variable
 });
 
 ```

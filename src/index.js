@@ -12,6 +12,10 @@ const lessVarToCssVar = (opts) => {
   let scopeTag = ':root';
   let header = '';
 
+  let jsOutputPath = undefined;
+  let jsVar = 'COLOR';
+  let jsheader = '';
+
   // 没有传参进来，认为是 node cil 执行，读取 argv
   if (!isExecOnCLI && opts) {
     console.log('\n⚡️ less-var-to-css-var via JS\n');
@@ -21,6 +25,10 @@ const lessVarToCssVar = (opts) => {
 
     if (opts.scopeTag) scopeTag = opts.scopeTag;
     if (opts.header) header = opts.header;
+
+    if (opts.jsOutputPath) jsOutputPath = opts.jsOutputPath;
+    if (opts.jsVar) jsVar = opts.jsVar;
+    if (opts.jsheader) jsheader = opts.jsheader;
   }
 
   if (isExecOnCLI) {
@@ -50,30 +58,93 @@ const lessVarToCssVar = (opts) => {
   const matchs = vars.match(/^@.*/gm);
 
   // eslint-disable-next-line array-callback-return,consistent-return
-  const allVars = matchs.map((m) => {
-    const mv = m.match(/^@(.*?):.*;/m);
+  const allCssVars = matchs.map((m) => {
+    const mv = m.match(/^@(.*?)\s?:\s?(.*);/m);
     // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
-    if (mv && mv[1]) return mv[1];
+    if (mv && mv[1]) {
+      return {
+        key: mv[1] || '',
+        value: mv[2] || '',
+      };
+    }
   });
 
-  const HEADER = `${header}
+  //
+  // output CSS
+  if (outputPath) {
+    // KEEP FORMAT ------------
+    const CSS_HEADER = `${header}
 
 ${scopeTag} {
 `;
 
-  const FOOTER = `}
+    const CSS_FOOTER = `}
 `;
 
-  let CONTENT = '';
+    // KEEP FORMAT ------------
+    let CSS_CONTENT = '';
 
-  allVars.forEach((v) => {
-    // --screen-md: @screen-md;
-    if (!v) return;
+    allCssVars.forEach((item) => {
+      // --screen-md: @screen-md;
+      if (!item?.key) return;
 
-    CONTENT += `  --${v}: @${v};\n`;
-  });
+      let val = item.key;
 
-  fs.writeFileSync(outputPath, `${HEADER}${CONTENT}${FOOTER}`);
+      // Use real CSS values instead of the --a: @a; mapping
+      if (opts.useRealValue) {
+        val = item.value;
+      }
+
+      // Replace the string of the less variable
+      if (opts.useRealValue && opts.useRealValueFilterLessVar) {
+        val = /[@|~]/.test(item.value)
+          ? opts.useRealValueFilterLessVar
+          : item.value;
+      }
+
+      CSS_CONTENT += `  --${item.key}: ${val};\n`;
+    });
+
+    // output CSS
+    fs.writeFileSync(outputPath, `${CSS_HEADER}${CSS_CONTENT}${CSS_FOOTER}`);
+  }
+
+  //
+  // output JS
+  if (jsOutputPath) {
+    // KEEP FORMAT ------------
+    let JS_HEADER = `export const ${jsVar} = {
+`;
+
+    // KEEP FORMAT ------------
+    if (jsheader) {
+      JS_HEADER = `${jsheader}
+
+${JS_HEADER}`;
+    }
+
+    const JS_FOOTER = `};
+`;
+
+    // KEEP FORMAT ------------
+    let JS_CONTENT = '';
+
+    allCssVars.forEach((item) => {
+      // --screen-md: @screen-md;
+      if (!item?.key) return;
+
+      const val = /[@|~]/.test(item.value)
+        ? `${opts.useRealValueFilterLessVar}`
+        : item.value;
+
+      JS_CONTENT += `  '--${item.key}': ${
+        // If there is a space ` `, use ` ` to enclose it
+        val.includes(' ') ? `\`${val}\`` : `\'${val}\'`
+      },\n`;
+    });
+
+    fs.writeFileSync(jsOutputPath, `${JS_HEADER}${JS_CONTENT}${JS_FOOTER}`);
+  }
 
   console.log('   -', outputPath, '\n');
 };
