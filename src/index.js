@@ -73,11 +73,17 @@ const lessVarToCssVar = (opts) => {
   // output CSS
   if (outputPath) {
     // KEEP FORMAT ------------
-    const CSS_HEADER = `${header}
-
-${scopeTag} {
+    let CSS_HEADER = `${scopeTag} {
 `;
 
+    // KEEP FORMAT ------------
+    if (header) {
+      CSS_HEADER = `${header}
+
+${CSS_HEADER}`;
+    }
+
+    // KEEP FORMAT ------------
     const CSS_FOOTER = `}
 `;
 
@@ -88,11 +94,11 @@ ${scopeTag} {
       // --screen-md: @screen-md;
       if (!item?.key) return;
 
-      let val = item.key;
+      let val = `@${item.key}`;
 
       // Use real CSS values instead of the --a: @a; mapping
       if (opts.useRealValue) {
-        val = item.value;
+        val = `${item.value}`;
       }
 
       // Replace the string of the less variable
@@ -113,7 +119,8 @@ ${scopeTag} {
   // output JS
   if (jsOutputPath) {
     // KEEP FORMAT ------------
-    let JS_HEADER = `export const ${jsVar} = {
+    let JS_HEADER = `/* eslint-disable max-len */
+export const ${jsVar} = {
 `;
 
     // KEEP FORMAT ------------
@@ -123,6 +130,7 @@ ${scopeTag} {
 ${JS_HEADER}`;
     }
 
+    // KEEP FORMAT ------------
     const JS_FOOTER = `};
 `;
 

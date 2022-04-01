@@ -1,12 +1,12 @@
-@import '/src/styles/variables.less';
+@import './variables.less';
 
 :root {
   --safe-area-inset-top: env(safe-area-inset-top);
   --safe-area-inset-bottom: env(safe-area-inset-bottom);
   --safe-area-inset-left: env(safe-area-inset-left);
   --safe-area-inset-right: env(safe-area-inset-right);
-  --THEME--DARK: ____IS_A_LESS_VAR____;
-  --THEME--TEST: ____IS_A_LESS_VAR____;
+  --THEME--DARK: ~'theme-dark';
+  --THEME--TEST: ~'theme-test';
   --container-ext-width: 280px;
   --page-body-bg-color: #fff;
   --page-border-radius: 5px;
@@ -30,15 +30,15 @@
   --pane-drawer-cancel-button-color--dark: #222;
   --comment-count-color: #fd0000;
   --charging-count-color: #fca810;
-  --favorite-count-color: ____IS_A_LESS_VAR____;
+  --favorite-count-color: @comment-count-color;
   --login-tips-color: #a1b2c5;
   --login-tips-color--dark: #a1b2c5;
   --font-chinese: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1';
-  --font-family: ____IS_A_LESS_VAR____;
+  --font-family: -apple-system, BlinkMacSystemFont, @font-chinese, 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, 'Segoe UI', Arial, sans-serif;
   --font-family--android: system, sans-serif;
-  --style-ui-family: ____IS_A_LESS_VAR____;
+  --style-ui-family: -apple-system, BlinkMacSystemFont, @font-chinese, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', Arial, sans-serif;
   --number-family: 'Avenir Next', 'Avenir', 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --price-family: ____IS_A_LESS_VAR____;
+  --price-family: @number-family;
   --code-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   --prime-family: 'CindieMono-D', sans-serif;
   --palette-GR01: #d71a1b;
@@ -79,12 +79,12 @@
   --switch-sm-min-width: 28px;
   --text-color: #333;
   --text-color--dark: #eee;
-  --sub-text-color: ____IS_A_LESS_VAR____;
-  --sub-text-color--dark: ____IS_A_LESS_VAR____;
+  --sub-text-color: lighten(@text-color, 50%);
+  --sub-text-color--dark: lighten(@text-color, 50%);
   --primary-bg-color: #f2f2f2;
   --primary-bg-color--dark: #000;
-  --primary-color: ____IS_A_LESS_VAR____;
-  --primary-color--dark: ____IS_A_LESS_VAR____;
+  --primary-color: @palette-GR01;
+  --primary-color--dark: @palette-GR01--dark;
   --prime-bg-color: #20232c;
   --prime-tab-text-color: #63646b;
   --prime-tab-bg-color: #0e0e11;
