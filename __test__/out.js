@@ -10,7 +10,7 @@ lessVarToCssVar({
   header: "@import './variables.less';",
   //
   jsOutputPath: `${CUR_DIR}/variables.js`,
-  jsVar: 'PAGE_COLOR',
+  jsVar: 'CSS_VARS',
   jsheader: "import React, { useEffect } from 'react';",
   //
   useRealValue: true, // Use real CSS values instead of the --a: @a; mapping
@@ -24,9 +24,32 @@ lessVarToCssVar({
   // header: "@import './page-variables.less';",
   //
   jsOutputPath: `${CUR_DIR}/page-variables.js`,
-  jsVar: 'PAGE_COLOR',
+  jsVar: 'PAGE_CSS_VARS',
   // jsheader: "import React, { useEffect } from 'react';",
   //
-  // useRealValue: true, // Use real CSS values instead of the --a: @a; mapping
+  useRealValue: true, // Use real CSS values instead of the --a: @a; mapping
+  // useRealValueFilterLessVar: '____IS_A_LESS_VAR____', // Replace the string of the less variable
+});
+
+lessVarToCssVar({
+  inputPath: `${CUR_DIR}/kv-variables.less`,
+  outputPath: `${CUR_DIR}/kv-variables-css.less`,
+  scopeTag: ':root',
+  // header: "@import './kv-variables.less';",
+  //
+  jsOutputPath: `${CUR_DIR}/kv-variables.js`,
+  jsVar: 'KV_CSS_VARS',
+  // jsheader: "import React, { useEffect } from 'react';",
+  //
+  // Use Key Value Output JS,
+  //
+  // e.g.
+  // '--page-reading-bg-color': {
+  //   key: '--page-reading-bg-color',
+  //   value: '#3b5961',
+  // },
+  jsValueObjectKv: true,
+  //
+  useRealValue: true, // Use real CSS values instead of the --a: @a; mapping
   // useRealValueFilterLessVar: '____IS_A_LESS_VAR____', // Replace the string of the less variable
 });

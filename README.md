@@ -39,6 +39,7 @@ lessVarToCssVar({
   jsOutputPath: `${CUR_DIR}/variables.js`,
   jsVar: 'PAGE_COLOR',
   jsheader: "import React, { useEffect } from 'react';",
+  jsValueObjectKv: true,
   //
   // supported since v1.3.0
   useRealValue: true, // Use real CSS values instead of the --a: @a; mapping

@@ -5,7 +5,11 @@
 */
 
 /* eslint-disable max-len */
-export const PAGE_COLOR = {
-  '--page-abc-text-color': '#000',
-  '--page-abc-bg-color': '#fff',
+export const PAGE_CSS_VARS = {
+  '--page-reading-bg-color': '#3b5961',
+  '--page-reading-text-color': '#ffffff',
+  '--page-reading-border-radius': '30px',
+  '--page-reading-welcome-bg-color': '#354a53',
+  '--page-reading-welcome-text-color': '#ffff00',
+  '--page-reading-welcome-sub-text-color': '#ffffff02',
 };

@@ -134,10 +134,17 @@ const lessVarToCssVar = (opts) => {
         ? `${opts.useRealValueFilterLessVar}`
         : item.value;
 
-      JS_CONTENT += `  '--${item.key}': ${
-        // If there is a space ` `, use ` ` to enclose it
-        val.includes(' ') ? `\`${val}\`` : `\'${val}\'`
-      },\n`;
+      // If there is a space ` `, use ` ` to enclose it
+      const wrapVal = val.includes(' ') ? `\`${val}\`` : `\'${val}\'`;
+
+      if (opts.jsValueObjectKv) {
+        JS_CONTENT += `  '--${item.key}': {
+    key: '--${item.key}',
+    value: ${wrapVal},
+  },\n`;
+      } else {
+        JS_CONTENT += `  '--${item.key}': ${wrapVal},\n`;
+      }
     });
 
     fs.writeFileSync(jsOutputPath, `${JS_HEADER}${JS_CONTENT}${JS_FOOTER}`);
