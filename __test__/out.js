@@ -14,7 +14,7 @@ lessVarToCssVar({
   jsheader: "import React, { useEffect } from 'react';",
   //
   useRealValue: true, // Use real CSS values instead of the --a: @a; mapping
-  // useRealValueFilterLessVar: '____IS_A_LESS_VAR____', // Replace the string of the less variable
+  useRealValueFilterLessVar: '____IS_A_LESS_VAR____', // Replace the string of the less variable
 });
 
 lessVarToCssVar({
@@ -28,7 +28,7 @@ lessVarToCssVar({
   // jsheader: "import React, { useEffect } from 'react';",
   //
   useRealValue: true, // Use real CSS values instead of the --a: @a; mapping
-  // useRealValueFilterLessVar: '____IS_A_LESS_VAR____', // Replace the string of the less variable
+  useRealValueFilterLessVar: '____IS_A_LESS_VAR____', // Replace the string of the less variable
 });
 
 lessVarToCssVar({
@@ -51,5 +51,5 @@ lessVarToCssVar({
   jsValueObjectKv: true,
   //
   useRealValue: true, // Use real CSS values instead of the --a: @a; mapping
-  // useRealValueFilterLessVar: '____IS_A_LESS_VAR____', // Replace the string of the less variable
+  useRealValueFilterLessVar: '____IS_A_LESS_VAR____', // Replace the string of the less variable
 });
