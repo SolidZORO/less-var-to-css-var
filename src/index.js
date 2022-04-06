@@ -131,8 +131,8 @@ const lessVarToCssVar = (opts) => {
       if (!item?.key) return;
 
       // 过滤掉不需要的符号
-      item.value = item.value.replace(/\\/g, '');
-      item.value = item.value.replace(/['|~]/g, '');
+      item.value = item.value.replace(/\\/g, '#'); // e.g. '\5FAE' --> '#5FAE'
+      item.value = item.value.replace(/~/g, '');
 
       const val = /[@]/.test(item.value)
         ? `${opts.useRealValueFilterLessVar}`
@@ -151,7 +151,10 @@ const lessVarToCssVar = (opts) => {
       }
     });
 
-    fs.writeFileSync(jsOutputPath, `${JS_HEADER}${JS_CONTENT}${JS_FOOTER}`);
+    // all two `''` --> `'`
+    const result = `${JS_HEADER}${JS_CONTENT}${JS_FOOTER}`.replace(/''/g, "'");
+
+    fs.writeFileSync(jsOutputPath, result);
   }
 
   console.log('   -', outputPath, '\n');
