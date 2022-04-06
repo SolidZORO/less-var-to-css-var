@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.2](https://github.com/SolidZORO/less-var-to-css-var/compare/v1.4.1...v1.4.2) (2022-04-06)
+
+
+### Bug Fixes
+
+* fixed output -css.less missing string `~` and `\` ([457c365](https://github.com/SolidZORO/less-var-to-css-var/commit/457c365d4465c7ac1a4485ff7f0b0e66718fb0f9))
+
 ### [1.4.1](https://github.com/SolidZORO/less-var-to-css-var/compare/v1.4.0...v1.4.1) (2022-04-06)
 
 
