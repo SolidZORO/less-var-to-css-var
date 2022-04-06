@@ -91,20 +91,14 @@ const lessVarToCssVar = (opts) => {
 
       let val = `@${item.key}`;
 
-      // 过滤掉不需要的符号
-      item.value = item.value.replace(/\\/g, '');
-      item.value = item.value.replace(/['|~]/g, '');
-
       // Use real CSS values instead of the --a: @a; mapping
       if (opts.useRealValue) {
         val = `${item.value}`;
       }
 
-      // console.log(`K: ${item.key} V: ${item.value}`);
-
       // Replace the string of the less variable
       if (opts.useRealValue && opts.useRealValueFilterLessVar) {
-        val = /[@|~]/.test(item.value)
+        val = /[@]/.test(item.value)
           ? opts.useRealValueFilterLessVar
           : item.value;
       }
@@ -136,7 +130,11 @@ const lessVarToCssVar = (opts) => {
       // --screen-md: @screen-md;
       if (!item?.key) return;
 
-      const val = /[@|~]/.test(item.value)
+      // 过滤掉不需要的符号
+      item.value = item.value.replace(/\\/g, '');
+      item.value = item.value.replace(/['|~]/g, '');
+
+      const val = /[@]/.test(item.value)
         ? `${opts.useRealValueFilterLessVar}`
         : item.value;
 
