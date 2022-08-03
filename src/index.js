@@ -75,15 +75,14 @@ const lessVarToCssVar = (opts) => {
   //
   // output CSS
   if (outputPath) {
-    let CSS_HEADER = `${__CODE_GEN_COMMENT__}\n${scopeTag} {\n`;
+    let ROOT_CSS_HEADER = `${__CODE_GEN_COMMENT__}\n${scopeTag} {\n`;
 
     if (header) {
-      CSS_HEADER = `${__CODE_GEN_COMMENT__}\n${header}\n\n${scopeTag} {\n`;
+      ROOT_CSS_HEADER = `${__CODE_GEN_COMMENT__}\n${header}\n\n${scopeTag} {\n`;
     }
 
-    const CSS_FOOTER = `}\n`;
-
-    let CSS_CONTENT = '';
+    const ROOT_CSS_FOOTER = `}\n`;
+    let ROOT_CSS_CONTENT = '';
 
     allCssVars.forEach((item) => {
       // --screen-md: @screen-md;
@@ -103,11 +102,46 @@ const lessVarToCssVar = (opts) => {
           : item.value;
       }
 
-      CSS_CONTENT += `  --${item.key}: ${val};\n`;
+      ROOT_CSS_CONTENT += `  --${item.key}: ${val};\n`;
     });
 
-    // output CSS
-    fs.writeFileSync(outputPath, `${CSS_HEADER}${CSS_CONTENT}${CSS_FOOTER}`);
+    // Dark Css Vars
+    if (opts.scopeTagDark) {
+      let DARK_CSS_HEADER = `\n${opts.scopeTagDark} {\n`;
+      let DARK_CSS_CONTENT = '';
+      const DARK_CSS_FOOTER = `}\n`;
+
+      let ROOT_CSS_CONTENT_CLONE = '';
+
+      // get all --dark vars
+      const darkCssVars = ROOT_CSS_CONTENT?.match(/--.*--dark:.*/gm, '');
+
+      // remove all --dark vars
+      if (opts.removeAllRootDarkVars) {
+        // ROOT_CSS_CONTENT = ROOT_CSS_CONTENT.replaceAll(/\n.*--.*--dark:.*/gm, '');
+        ROOT_CSS_CONTENT_CLONE = ROOT_CSS_CONTENT.replaceAll(/\n.*--.*--dark:.*/gm, '');
+      }
+
+      darkCssVars?.forEach((item) => {
+        if (opts.removeAllDarkDarkSuffix) {
+          item = item.replace('--dark:', ':');
+        }
+
+        DARK_CSS_CONTENT += `  ${item}\n`;
+      })
+
+      const CSS_RESULT = `${ROOT_CSS_HEADER}${ROOT_CSS_CONTENT_CLONE}${ROOT_CSS_FOOTER}` +
+        `${DARK_CSS_HEADER}${DARK_CSS_CONTENT}${DARK_CSS_FOOTER}`;
+
+      console.log(CSS_RESULT);
+
+      // output ROOT + DARK CSS
+      fs.writeFileSync(outputPath, CSS_RESULT);
+      // return;
+    } else {
+      // output ROOT CSS
+      fs.writeFileSync(outputPath, `${ROOT_CSS_HEADER}${ROOT_CSS_CONTENT}${ROOT_CSS_FOOTER}`);
+    }
   }
 
   //

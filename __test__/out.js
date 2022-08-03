@@ -9,6 +9,11 @@ lessVarToCssVar({
   scopeTag: ':root',
   header: "@import './variables.less';",
   //
+  scopeTagDark: '.comp-wrapper--alwaysDarkMode,\n' +
+    ':global(.@{THEME--DARK}) .comp-wrapper',
+  removeAllRootDarkVars: true,
+  removeAllDarkDarkSuffix: true,
+  //
   jsOutputPath: `${CUR_DIR}/variables.js`,
   jsVar: 'CSS_VARS',
   jsheader: "import React, { useEffect } from 'react';",

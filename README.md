@@ -35,6 +35,13 @@ lessVarToCssVar({
   scopeTag: ':root',
   header: "@import '/src/styles/variables.less';",
   //
+  // Dark Mode
+  // supported since v1.5.0
+  scopeTagDark: '.comp-wrapper--alwaysDarkMode,\n' +
+    ':global(.@{THEME--DARK}) .comp-wrapper',
+  removeAllRootDarkVars: true,
+  removeAllDarkDarkSuffix: true,
+  //
   // supported since v1.3.0
   jsOutputPath: `${CUR_DIR}/variables.js`,
   jsVar: 'PAGE_COLOR',
